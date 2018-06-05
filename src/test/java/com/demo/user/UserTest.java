@@ -25,7 +25,7 @@ public class UserTest {
 
     @Test
     public void testGetUser() {
-        User user = userService.getUserById("5912892196824");
+        User user = userService.getUserById("5912480581547");
         logger.info("用户的明文密码："+user.getPassword());
     }
 }

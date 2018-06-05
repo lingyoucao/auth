@@ -1,0 +1,15 @@
+-- 数据库建表脚本 mysql
+CREATE TABLE AUTH_USER (
+USER_ID  DECIMAL(32),
+AUTH_CODE  VARCHAR(255),
+CREATE_DATE  DATETIME,
+MODIFY_DATE  DATETIME
+);
+
+
+-- 生成jwt.jks 然后利用PublicKeyUtil获取公钥，把公钥复制到public.cert中
+keytool -genkey -alias jwt -keypass fuzhou1234567890 -keyalg RSA -keysize 2048 -validity 36500 -keystore e:/jwt.jks -storepass fuzhou1234567890
+
+
+
+
