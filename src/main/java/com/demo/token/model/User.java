@@ -2,31 +2,37 @@ package com.demo.token.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 
 public class User implements Serializable{
-	private long id;
-	private String username;
+
+	/**
+	 * 用户ID
+	 */
+	private Long userId;
+	/**
+	 * 明文密码存放字段
+	 */
 	private String password;
-	private List<String> roles;
-	private Date create_date;
-	private Date modify_date;
+	/**
+	 * 密文密码，即授权码
+	 */
+	private String authCode;
+	/**
+	 * 创建时间
+	 */
+	private Date createDate;
+	/**
+	 * 修改时间
+	 */
+	private Date modifyDate;
 
-	public long getId() {
-		return id;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getPassword() {
@@ -37,27 +43,38 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public List<String> getRoles() {
-		return roles;
+	public String getAuthCode() {
+		return authCode;
 	}
 
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
+	public void setAuthCode(String authCode) {
+		this.authCode = authCode;
 	}
 
-	public Date getCreate_date() {
-		return create_date;
+	public Date getCreateDate() {
+		return createDate;
 	}
 
-	public void setCreate_date(Date create_date) {
-		this.create_date = create_date;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 
-	public Date getModify_date() {
-		return modify_date;
+	public Date getModifyDate() {
+		return modifyDate;
 	}
 
-	public void setModify_date(Date modify_date) {
-		this.modify_date = modify_date;
+	public void setModifyDate(Date modifyDate) {
+		this.modifyDate = modifyDate;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"userId=" + userId +
+				", password='" + password + '\'' +
+				", authCode='" + authCode + '\'' +
+				", createDate=" + createDate +
+				", modifyDate=" + modifyDate +
+				'}';
 	}
 }

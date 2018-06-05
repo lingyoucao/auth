@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.mapper.UserMapper">
+
+    <resultMap id="resultMap" type="com.demo.token.model.User" >
+        <id column="USER_ID" property="userId" jdbcType="DECIMAL" />
+        <result column="AUTH_CODE" property="authCode" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getUserById" resultMap="resultMap" parameterType="java.lang.String">
+        SELECT USER_ID,AUTH_CODE FROM AUTH_USER WHERE USER_ID = #{userId}
+    </select>
+
+    <select id="addUser" resultType="Integer" parameterType="com.demo.token.model.User">
+        INSERT INTO AUTH_USER(USER_ID, AUTH_CODE, CREATE_DATE, MODIFY_DATE)
+        VALUE (#{userId}, #{authCode}, SYSDATE, SYSDATE)
+    </select>
+
+</mapper>

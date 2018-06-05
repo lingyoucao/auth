@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 不需要token可以直接访问的路径
+ */
 @RestController
 public class NoAuthController {
     private static final Logger logger = LoggerFactory.getLogger(NoAuthController.class);

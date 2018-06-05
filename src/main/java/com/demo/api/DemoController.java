@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 请求头中必须有token的请求示例
+ */
 @RestController
 public class DemoController {
     private static final Logger logger = LoggerFactory.getLogger(DemoController.class);
